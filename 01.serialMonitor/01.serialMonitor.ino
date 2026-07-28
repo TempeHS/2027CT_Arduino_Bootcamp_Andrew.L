@@ -30,7 +30,8 @@
 
 // The setup function runs once when you press reset or power the board
 void setup() {
-
+  Serial.begin(115200);
+  Serial.print("Hello!");
 }
 
 // The loop function runs over and over again forever
