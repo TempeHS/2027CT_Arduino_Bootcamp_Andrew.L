@@ -32,7 +32,8 @@ int counter = 0;   // declared OUTSIDE any function
 void setup() {
   Serial.begin(115200);
   Serial.println("Starting counter demo");
-  counter = 100;                 // setup() can use it
+  int counter = 0;
+  counter = 100;
 }
 
 void loop() {
