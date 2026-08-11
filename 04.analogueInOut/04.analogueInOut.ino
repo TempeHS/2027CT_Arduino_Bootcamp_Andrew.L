@@ -64,9 +64,9 @@ void loop() {
   analogWrite(LED_PIN, 255);   // always on
   delay(1000);
 
-    tone(BUZZER_PIN, 262);   // middle C
+  tone(BUZZER_PIN, 1000);   // middle C
   delay(500);
-  tone(BUZZER_PIN, 523);   // C an octave up
+  tone(BUZZER_PIN, 1000);   // C an octave up
   delay(500);
   noTone(BUZZER_PIN);      // silence
   delay(500);
