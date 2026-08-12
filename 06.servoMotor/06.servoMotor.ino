@@ -38,9 +38,13 @@ const int POT_PIN = A0;   // Grove Potentiometer on A0
 Servo myServo;
 
 void setup() {
-
+  myServo.attach(SERVO_PIN);   // servo signal on D3
+  myServo.write(90);           // move to the middle
 }
 
 void loop() {
-
+  int potValue = analogRead(A0);         // read pot value: 0 to 1023
+  int angle = map(potValue, 0, 1023, 0, 180);  // scale to 0 to 180
+  myServo.write(angle);                  // set servo angle
+  delay(15);                             // wait for servo to move
 }
