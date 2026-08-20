@@ -34,9 +34,21 @@ void setup() {
   Serial.println("Arduino ready!");    // When does this line print?
 }
 
+int classifyZone(int distance, int nearLimit, int farLimit) {
+  if (distance < nearLimit) {
+    return 0;              // danger
+  } else if (distance < farLimit) {
+    return 1;              // warning
+  }
+  return 2;                // safe
+}
+
 void loop() {
-  Serial.print("Count: ");
-  Serial.println(42);   // Prints: Count: 42
-  delay(1000);  // Wait 1 second each cycle
+  int distance = readDistance();
+  int zone = classifyZone(distance, 10, 30);
+  Serial.print(distance);
+  Serial.print(" cm, zone ");
+  Serial.println(zone);
+  delay(100);
 }
 
