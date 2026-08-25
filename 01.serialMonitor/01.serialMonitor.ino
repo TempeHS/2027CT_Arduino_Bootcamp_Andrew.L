@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will understand the difference between the inbuilt setup and loop methods,

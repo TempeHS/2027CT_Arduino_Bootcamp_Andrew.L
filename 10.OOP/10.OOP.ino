@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will learn about the Object Oriented Paradigm and build their own
@@ -20,10 +20,52 @@
     https://youtu.be/cUVryWbVkXk
 */
 
-void setup() {
+class Led {
+  private:
+    int pin;          // properties: data each Led remembers
+    bool isOn;
 
+  public:
+    Led(int ledPin) {  // constructor: runs when an object is created
+      pin = ledPin;
+      isOn = false;
+    }
+
+    void begin() {
+      pinMode(pin, OUTPUT);
+      digitalWrite(pin, LOW);
+    }
+
+    void turnOn() {    // methods: things every Led can do
+      digitalWrite(pin, HIGH);
+      isOn = true;
+    }
+
+    void turnOff() {
+      digitalWrite(pin, LOW);
+      isOn = false;
+    }
+
+    void toggle() {
+      if (isOn) {
+        turnOff();
+      } else {
+        turnOn();
+      }
+    }
+};
+
+Led moduleLed(6);    // the Grove LED module on D6
+Led builtinLed(13);  // the LED soldered onto the Uno itself
+
+void setup() {
+  moduleLed.begin();
+  builtinLed.begin();
+  builtinLed.turnOn();   // start opposite to the module LED
 }
 
 void loop() {
-
+  moduleLed.toggle();
+  builtinLed.toggle();
+  delay(500);
 }

@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will read a Grove Button module and control a Grove LED module,

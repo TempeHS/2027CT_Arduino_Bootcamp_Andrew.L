@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will learn the different data types used in the C++ language,

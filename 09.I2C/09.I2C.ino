@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will use the I2C communication protocol to send data to the OLED

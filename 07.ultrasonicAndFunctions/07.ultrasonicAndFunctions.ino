@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
 
   Learning Intention:
   The students will measure distance with the Grove 3-pin ultrasonic sensor using a

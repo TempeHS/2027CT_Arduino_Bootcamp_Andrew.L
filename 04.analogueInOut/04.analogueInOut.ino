@@ -1,7 +1,7 @@
 /*
   Author:
 
-  Learning Intention:
+  Learning Intention: Andrew Yong Ly
   The students will read analogue sensors, use math (map, constrain, integer division)
   to convert value ranges, and write analogue output using PWM to an LED and buzzer.
 
