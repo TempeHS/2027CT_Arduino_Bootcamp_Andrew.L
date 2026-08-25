@@ -44,6 +44,7 @@
     https://www.arduino.cc/reference/en/language/functions/communication/wire/
 */
 
+#include <Wire.h>
 #include "Arduino_SensorKit.h"
 
 void setup() {
@@ -55,9 +56,9 @@ void loop() {
   int random_value = analogRead(A0);   // read value from A0
 
   Oled.setFont(u8x8_font_chroma48medium8_r);
-  Oled.setCursor(0, 33);      // set the coordinates
-  Oled.print("Analog Value:");
+  Oled.setCursor(10, 43);      // set the coordinates
+  Oled.print("tota:");
   Oled.print(random_value);   // print the values
   Oled.refreshDisplay();      // update the display
-  delay(1000);
+  delay(250);
 }
