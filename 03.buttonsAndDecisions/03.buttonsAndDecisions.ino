@@ -48,7 +48,11 @@ void setup() {
 }
 
 void loop() {
-  int zone = reading / 25;    // whole-number division: gives 0, 1, 2 or 3
+  int reading = random(0, 100);
+  Serial.print("Reading: ");
+  Serial.println(reading);
+
+    int zone = reading / 25;    // whole-number division: gives 0, 1, 2 or 3
 
   switch (zone) {
     case 0:
@@ -56,6 +60,7 @@ void loop() {
       break;
     case 1:
       Serial.println("  zone 1");
+      break;
     case 2:
       Serial.println("  zone 2");
       break;
@@ -63,3 +68,11 @@ void loop() {
       Serial.println("  zone 3: highest quarter");
       break;
   }
+
+// Boolean AND
+if (reading > 20 && reading < 80) {
+  Serial.println("  in the safe band");
+}
+
+  delay(1000);
+}
