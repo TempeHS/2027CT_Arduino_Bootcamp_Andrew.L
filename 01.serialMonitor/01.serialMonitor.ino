@@ -31,24 +31,10 @@
 // The setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(115200);                  // Start talking to the computer at 115200 baud
-  Serial.println("Arduino ready!");    // When does this line print?
-}
-
-int classifyZone(int distance, int nearLimit, int farLimit) {
-  if (distance < nearLimit) {
-    return 0;              // danger
-  } else if (distance < farLimit) {
-    return 1;              // warning
-  }
-  return 2;                // safe
+  Serial.print("Count: ");
+  Serial.println(42);   // Prints: Count: 42
 }
 
 void loop() {
-  int distance = readDistance();
-  int zone = classifyZone(distance, 10, 30);
-  Serial.print(distance);
-  Serial.print(" cm, zone ");
-  Serial.println(zone);
-  delay(100);
+  delay(1000);  // Wait 1 second each cycle
 }
-
