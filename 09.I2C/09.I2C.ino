@@ -47,18 +47,50 @@
 #include <Wire.h>
 #include "Arduino_SensorKit.h"
 
+#define Environment Environment_I2C
+
+float temperature;
+float humidity;
+
+void readSensor() {
+  temperature = Environment.readTemperature();
+  humidity = Environment.readHumidity();
+}
+
+void updateDisplay() {
+  Oled.clearDisplay();
+
+  Oled.setCursor(0, 16);
+  Oled.print("Temp: ");
+  Oled.print(temperature);
+  Oled.print(" C");
+
+  Oled.setCursor(0, 32);
+  Oled.print("Humidity: ");
+  Oled.print(humidity);
+  Oled.print(" %");
+
+  Oled.refreshDisplay();
+}
+
+void checkAlert() {
+  if (temperature > 28) {
+    Oled.setCursor(0, 48);
+    Oled.print("Very Hot!");
+    Oled.refreshDisplay();
+  }
+}
+
 void setup() {
+  Wire.begin();
   Oled.begin();
-  Oled.setFlipMode(true);   // sets the rotation of the screen
+  Environment.begin();
 }
 
 void loop() {
-  int random_value = analogRead(A0);   // read value from A0
+  readSensor();
+  updateDisplay();
+  checkAlert();
 
-  Oled.setFont(u8x8_font_chroma48medium8_r);
-  Oled.setCursor(10, 43);      // set the coordinates
-  Oled.print("tota:");
-  Oled.print(random_value);   // print the values
-  Oled.refreshDisplay();      // update the display
-  delay(250);
+  delay(500);
 }
