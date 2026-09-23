@@ -1,5 +1,5 @@
 /*
-  Author: 
+  Author: Andrew Yong Ly
   Learning Intention: Students will build a monitoring system that watches
   conditions and raises alerts, like the guardian inside a smart fridge
 

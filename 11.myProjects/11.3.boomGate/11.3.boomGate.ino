@@ -1,5 +1,5 @@
 /*
-  Author:
+  Author: Andrew Yong Ly
   Learning Intention: Students will use an ultrasonic sensor to control a servo motor
 
   Student Notes:
@@ -16,3 +16,4 @@ void setup() {
 void loop() {
 
 }
+
